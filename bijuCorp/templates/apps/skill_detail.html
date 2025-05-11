@@ -1,0 +1,23 @@
+<h1>{{ topic|capfirst }} Concepts</h1>
+
+{% if topic == "python" %}
+  <ul>
+    <li>Lists</li>
+    <li>OOP</li>
+    <li>Decorators</li>
+  </ul>
+{% elif topic == "django" %}
+  <ul>
+    <li>Models</li>
+    <li>Templates</li>
+    <li>Views</li>
+  </ul>
+{% elif topic == "react" %}
+  <ul>
+    <li>Components</li>
+    <li>Hooks</li>
+    <li>useEffect</li>
+  </ul>
+{% else %}
+  <p>No topics found.</p>
+{% endif %}

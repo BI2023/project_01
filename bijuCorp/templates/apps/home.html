@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home - BijuCorp{% endblock %}
+
+{% block content %}
+<div class="row align-items-center">
+    <!-- Left side: Photo -->
+    <div class="col-md-4 text-center">
+        {% comment %} <img src="{% static 'images/profile.jpg' %}" alt="My Photo" class="img-fluid rounded-circle shadow" style="max-width: 250px;"> {% endcomment %}
+        <img src="{% static 'home/profile.jpg' %}" alt="Profile Picture" style="max-width: 250px;">
+
+    
+    </div>
+
+    <!-- Right side: Summary -->
+    <div class="col-md-8">
+        <h2>Hello, I'm Bhupendra Singh 👋</h2>
+        <p>
+            I’m a passionate Software Engineer with 2 years of experience in web development, data engineering, and cloud infrastructure. 
+            I specialize in building scalable backend services using Django and deploying them on AWS.
+        </p>
+        <p>
+            With a strong foundation in Python, SQL, and React, I enjoy turning complex problems into elegant solutions.
+            I’m currently seeking opportunities to build impactful products and grow as an SDE.
+        </p>
+    </div>
+</div>
+{% endblock %}
