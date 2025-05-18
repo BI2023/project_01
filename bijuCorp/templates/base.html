@@ -2,79 +2,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}BijuCorp{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>{% block title %}BijuCorp{% endblock %}</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+
 </head>
-<style>
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-  
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      min-width: 160px;
-      border: 1px solid #ccc;
-      z-index: 1;
-    }
-  
-    .dropdown-content a {
-      color: black;
-      padding: 10px 12px;
-      text-decoration: none;
-      display: block;
-    }
-  
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-  
-    .dropdown-content a:hover {
-      background-color:rgb(23, 208, 82);
-    }
-  </style>
 <body>
+   <!-- Sidebar -->
+   <nav class="sidebar">
+       <div class="logo">
+           Dashboard
+       </div>
+       <button class="toggle-btn">
+           <i class="fas fa-chevron-left"></i>
+       </button>
+       <ul class="nav-links">
+           <li>
+               <a href="/home/">
+                   <i class="fas fa-home"></i>
+                   <span>Dashboard</span>
+               </a>
+           </li>
+           <li>
+               <a href="#analytics">
+                   <i class="fas fa-chart-bar"></i>
+                   <span>Analytics</span>
+               </a>
+           </li>
+           <li>
+               <a href="#users">
+                   <i class="fas fa-users"></i>
+                   <span>Users</span>
+               </a>
+           </li>
+           <li>
+               <a href="#settings">
+                   <i class="fas fa-cog"></i>
+                   <span>Settings</span>
+               </a>
+           </li>
+           <li>
+               <a href="#profile">
+                   <i class="fas fa-user"></i>
+                   <span>Profile</span>
+               </a>
+           </li>
+           <li>
+               <a href="#contact">
+                   <i class="fas fa-user"></i>
+                   <span>Contact</span>
+               </a>
+           </li>
+       </ul>
+   </nav>
 
-{% comment %} <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home' %}">BijuCorp</a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'skills' %}">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'docs' %}">Docs</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav> {% endcomment %}
 
-<nav>
-    <ul style="list-style: none; display: flex; gap: 20px;">
-      <li><a href="{% url 'home' %}">Home</a></li>
-      <li><a href="{% url 'about' %}">About</a></li>
-  
-      <!-- Dropdown for Skills -->
-      <li class="dropdown">
-        <a href="#">Skills</a>
-        <div class="dropdown-content">
-          <a href="{% url 'skill_detail' 'python' %}">Python</a>
-          <a href="{% url 'skill_detail' 'django' %}">Django</a>
-          <a href="{% url 'skill_detail' 'react' %}">React.js</a>
-        </div>
-      </li>
-  
-      <li><a href="{% url 'contact' %}">Contact</a></li>
-      <li><a href="{% url 'docs' %}">Docs</a></li>
-    </ul>
-  </nav>
+   <!-- Main Content -->
+   <div class="main-content">
 
-<div class="container mt-4">
     {% block content %}{% endblock %}
-</div>
+
+   </div>
+
+   <script src="{% static 'animation_script.js' %}"></script>
+   
+
 
 </body>
 </html>
+
